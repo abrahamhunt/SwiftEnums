@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		D69FD54421C936FB00A1C1EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69FD54321C936FB00A1C1EF /* AppDelegate.swift */; };
-		D69FD54621C936FB00A1C1EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69FD54521C936FB00A1C1EF /* ViewController.swift */; };
+		D69FD54621C936FB00A1C1EF /* EnumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69FD54521C936FB00A1C1EF /* EnumsTableViewController.swift */; };
 		D69FD54921C936FB00A1C1EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69FD54721C936FB00A1C1EF /* Main.storyboard */; };
 		D69FD54B21C936FC00A1C1EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D69FD54A21C936FC00A1C1EF /* Assets.xcassets */; };
 		D69FD54E21C936FC00A1C1EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69FD54C21C936FC00A1C1EF /* LaunchScreen.storyboard */; };
 		D69FD55921C936FC00A1C1EF /* LambdaEnumsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69FD55821C936FC00A1C1EF /* LambdaEnumsTests.swift */; };
 		D69FD56421C936FC00A1C1EF /* LambdaEnumsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69FD56321C936FC00A1C1EF /* LambdaEnumsUITests.swift */; };
+		D6B8D42121DFA21A0081BE14 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B8D41F21DFA21A0081BE14 /* SwitchTableViewCell.swift */; };
+		D6B8D42221DFA21A0081BE14 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B8D42021DFA21A0081BE14 /* SwitchTableViewCell.xib */; };
+		D6B8D42721DFA2330081BE14 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B8D42521DFA2330081BE14 /* SliderTableViewCell.swift */; };
+		D6B8D42821DFA2330081BE14 /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B8D42621DFA2330081BE14 /* SliderTableViewCell.xib */; };
+		D6B8D42B21DFA23F0081BE14 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B8D42921DFA23F0081BE14 /* TextTableViewCell.swift */; };
+		D6B8D42C21DFA23F0081BE14 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6B8D42A21DFA23F0081BE14 /* TextTableViewCell.xib */; };
+		D6B8D43021DFACD20081BE14 /* MoodEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B8D42F21DFACD20081BE14 /* MoodEmoji.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,7 @@
 /* Begin PBXFileReference section */
 		D69FD54021C936FB00A1C1EF /* LambdaEnums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LambdaEnums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69FD54321C936FB00A1C1EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D69FD54521C936FB00A1C1EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D69FD54521C936FB00A1C1EF /* EnumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTableViewController.swift; sourceTree = "<group>"; };
 		D69FD54821C936FB00A1C1EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D69FD54A21C936FC00A1C1EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D69FD54D21C936FC00A1C1EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +54,13 @@
 		D69FD55F21C936FC00A1C1EF /* LambdaEnumsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LambdaEnumsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69FD56321C936FC00A1C1EF /* LambdaEnumsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LambdaEnumsUITests.swift; sourceTree = "<group>"; };
 		D69FD56521C936FC00A1C1EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6B8D41F21DFA21A0081BE14 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		D6B8D42021DFA21A0081BE14 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
+		D6B8D42521DFA2330081BE14 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
+		D6B8D42621DFA2330081BE14 /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
+		D6B8D42921DFA23F0081BE14 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
+		D6B8D42A21DFA23F0081BE14 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
+		D6B8D42F21DFACD20081BE14 /* MoodEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEmoji.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +111,10 @@
 		D69FD54221C936FB00A1C1EF /* LambdaEnums */ = {
 			isa = PBXGroup;
 			children = (
+				D6B8D43221DFB1ED0081BE14 /* ViewControllers */,
+				D6B8D43121DFADFB0081BE14 /* Model */,
+				D6B8D41E21DFA1FD0081BE14 /* Cells */,
 				D69FD54321C936FB00A1C1EF /* AppDelegate.swift */,
-				D69FD54521C936FB00A1C1EF /* ViewController.swift */,
 				D69FD54721C936FB00A1C1EF /* Main.storyboard */,
 				D69FD54A21C936FC00A1C1EF /* Assets.xcassets */,
 				D69FD54C21C936FC00A1C1EF /* LaunchScreen.storyboard */,
@@ -123,6 +139,35 @@
 				D69FD56521C936FC00A1C1EF /* Info.plist */,
 			);
 			path = LambdaEnumsUITests;
+			sourceTree = "<group>";
+		};
+		D6B8D41E21DFA1FD0081BE14 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D6B8D41F21DFA21A0081BE14 /* SwitchTableViewCell.swift */,
+				D6B8D42021DFA21A0081BE14 /* SwitchTableViewCell.xib */,
+				D6B8D42521DFA2330081BE14 /* SliderTableViewCell.swift */,
+				D6B8D42621DFA2330081BE14 /* SliderTableViewCell.xib */,
+				D6B8D42921DFA23F0081BE14 /* TextTableViewCell.swift */,
+				D6B8D42A21DFA23F0081BE14 /* TextTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D6B8D43121DFADFB0081BE14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6B8D42F21DFACD20081BE14 /* MoodEmoji.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D6B8D43221DFB1ED0081BE14 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D69FD54521C936FB00A1C1EF /* EnumsTableViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D69FD54E21C936FC00A1C1EF /* LaunchScreen.storyboard in Resources */,
+				D6B8D42821DFA2330081BE14 /* SliderTableViewCell.xib in Resources */,
+				D6B8D42C21DFA23F0081BE14 /* TextTableViewCell.xib in Resources */,
+				D6B8D42221DFA21A0081BE14 /* SwitchTableViewCell.xib in Resources */,
 				D69FD54B21C936FC00A1C1EF /* Assets.xcassets in Resources */,
 				D69FD54921C936FB00A1C1EF /* Main.storyboard in Resources */,
 			);
@@ -256,8 +304,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D69FD54621C936FB00A1C1EF /* ViewController.swift in Sources */,
+				D69FD54621C936FB00A1C1EF /* EnumsTableViewController.swift in Sources */,
 				D69FD54421C936FB00A1C1EF /* AppDelegate.swift in Sources */,
+				D6B8D42721DFA2330081BE14 /* SliderTableViewCell.swift in Sources */,
+				D6B8D43021DFACD20081BE14 /* MoodEmoji.swift in Sources */,
+				D6B8D42121DFA21A0081BE14 /* SwitchTableViewCell.swift in Sources */,
+				D6B8D42B21DFA23F0081BE14 /* TextTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
