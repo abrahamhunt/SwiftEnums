@@ -10,10 +10,49 @@ import UIKit
 
 class EnumsTableViewController: UITableViewController {
     
-    var moods: [TextCellConfiguration] = [TextCellConfiguration]()
-    var switchRows: [SwitchCellConfiguration] = [SwitchCellConfiguration]()
-    var sliderRows: [SliderCellConfiguration] = [SliderCellConfiguration]()
-
+    enum TableSection {
+        case switches(collection: [SwitchCellConfiguration])
+        case sliders(collection: [SliderCellConfiguration])
+        case moods(collection: [TextCellConfiguration])
+        
+        var count: Int {
+            switch self {
+            case .switches(let collection):
+                return collection.count
+            case .sliders(let collection):
+                return collection.count
+            case .moods(let collection):
+                return collection.count
+            }
+        }
+        
+        var title: String {
+            switch self {
+            case .switches(_):
+                return NSLocalizedString("Switches", comment: "Title for switches section")
+            case .sliders(_):
+                return NSLocalizedString("Sliders", comment: "Title for sliders section")
+            case .moods(_):
+                return NSLocalizedString("Moods", comment: "Title for moods section")
+            }
+        }
+        
+        func cell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+            switch self {
+            case .switches(let collection):
+                return SwitchTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: collection[indexPath.row])
+            case .sliders(let collection):
+                return SliderTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: collection[indexPath.row])
+            case .moods(let collection):
+                return TextTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: collection[indexPath.row])
+            }
+        }
+        
+    }
+    
+    // Unify collections with an enforced order, sounds like an array
+    var sections = [TableSection]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,48 +62,36 @@ class EnumsTableViewController: UITableViewController {
         
         let sadMood = TextCellConfiguration.init(title: NSLocalizedString("Sad", comment: "Title for the sad mood cell"), subtitle: NSLocalizedString("It's Tuesday huh?", comment: "Subtitle for the sad mood cell"), mood: .sad)
         let happyMood = TextCellConfiguration.init(title: NSLocalizedString("Happy", comment: "Title for the happy mood cell"), subtitle: NSLocalizedString("Hump day complete", comment: "Subtitle for the happy mood cell"), mood: .happy)
-        moods = [sadMood, happyMood]
         
         let breakfast = SwitchCellConfiguration.init(isSwitchOn: true, title: NSLocalizedString("Breakfast", comment: "Title for the breakfast switch cell"))
         let lunch = SwitchCellConfiguration.init(isSwitchOn: false, title: NSLocalizedString("Lunch", comment: "Title for the lunch switch cell"))
-        switchRows = [breakfast, lunch]
+        let dinner = SwitchCellConfiguration.init(isSwitchOn: false, title: NSLocalizedString("Dinner", comment: "Title for the dinner switch cell"))
         
         let calories = SliderCellConfiguration.init(title: NSLocalizedString("Calories", comment: "Title for the calories cell"), thumbColor: .red)
         let steps = SliderCellConfiguration.init(title: NSLocalizedString("Steps", comment: "Title for the steps cell"), thumbColor: .blue)
-        sliderRows = [calories, steps]
+        
+        sections = [.switches(collection: [breakfast, lunch, dinner]), .sliders(collection: [calories, steps]), .moods(collection: [sadMood, happyMood])]
         
         tableView.reloadData()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return sections.count
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0: return moods.count
-        case 1: return switchRows.count
-        case 2: return sliderRows.count
-        default: return 0
-        }
+        let tableSection = sections[section]
+        return tableSection.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0: return NSLocalizedString("Moods", comment: "Title for moods section")
-        case 1: return NSLocalizedString("Sliders", comment: "Title for sliders section")
-        case 2: return NSLocalizedString("Switches", comment: "Title for switches section")
-        default: return nil
-        }
+        let tableSection = sections[section]
+        return tableSection.title
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0: return SwitchTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: switchRows[indexPath.row])
-        case 1: return SliderTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: sliderRows[indexPath.row])
-        case 2: return TextTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: moods[indexPath.row])
-        default: assert(false, "Shouldn't have cells in another section")
-        }
+        let tableSection = sections[indexPath.section]
+        return tableSection.cell(tableView: tableView, indexPath: indexPath)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
