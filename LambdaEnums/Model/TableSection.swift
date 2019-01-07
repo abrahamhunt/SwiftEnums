@@ -28,7 +28,7 @@ class TableSection {
         }
     }
     
-    var cellTypes = [TableCellType]()
+    private var cellTypes = [TableCellType]()
     
     var count: Int {
         return cellTypes.count
@@ -36,15 +36,16 @@ class TableSection {
     
     var title: String?
     
-    func cell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let configuration = cellTypes[indexPath.row]
-        return configuration.cell(tableView: tableView, indexPath: indexPath)
-    }
-    
     init (title: String?, types: [TableCellType]) {
         self.title = title
         cellTypes = types
     }
+    
+    func cell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        let configuration = cellTypes[indexPath.row]
+        return configuration.cell(tableView: tableView, indexPath: indexPath)
+    }
+        
 }
 
 class SwitchTableSection: TableSection {

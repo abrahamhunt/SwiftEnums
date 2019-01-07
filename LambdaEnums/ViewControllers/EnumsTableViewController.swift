@@ -30,9 +30,6 @@ class EnumsTableViewController: UITableViewController {
         let calories = SliderCellConfiguration.init(title: NSLocalizedString("Calories", comment: "Title for the calories cell"), thumbColor: .red)
         let steps = SliderCellConfiguration.init(title: NSLocalizedString("Steps", comment: "Title for the steps cell"), thumbColor: .blue)
         
-        //sections = [.switches(collection: [breakfast, lunch, dinner]), .sliders(collection: [calories, steps]), .moods(collection: [sadMood, happyMood])]
-//        sections = [.intermingled(collection: [.onSwitch(breakfast), .slider(calories), .mood(happyMood), .slider(steps), .onSwitch(lunch), .mood(sadMood), .onSwitch(dinner)])]
-        
 //        sections = [SwitchTableSection(title: NSLocalizedString("Switches", comment: "Title for switches section"), cellConfigurations: [breakfast, lunch, dinner]), SliderTableSection(title: NSLocalizedString("Sliders", comment: "Title for sliders section"), cellConfigurations: [calories, steps]), TextTableSection(title: NSLocalizedString("Moods", comment: "Title for moods section"), cellConfigurations: [sadMood, happyMood])]
         
         sections = [TableSection(title: nil, types: [.onSwitch(breakfast), .slider(calories), .text(happyMood), .slider(steps), .onSwitch(lunch), .text(sadMood), .onSwitch(dinner)])]

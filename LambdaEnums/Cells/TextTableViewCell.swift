@@ -14,11 +14,7 @@ struct TextCellConfiguration {
     let mood: MoodEmoji
 }
 
-class TextTableViewCell: UITableViewCell {
-    
-    static func register(with tableView: UITableView) {
-        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
-    }
+class TextTableViewCell: UITableViewCell, NibDefinedTableCell {
     
     static func dequeue(from tableView: UITableView, indexPath: IndexPath, with configuration: TextCellConfiguration) -> TextTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! TextTableViewCell
@@ -26,9 +22,6 @@ class TextTableViewCell: UITableViewCell {
         return cell
     }
     
-    private static let cellIdentifier = "TextTableViewCell"
-    private static let nib = UINib(nibName: cellIdentifier, bundle: Bundle(for: TextTableViewCell.self))
-
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var emojiLabel: UILabel!

@@ -27,11 +27,7 @@ struct SliderCellConfiguration {
     let thumbColor: SliderCellColor
 }
 
-class SliderTableViewCell: UITableViewCell {
-
-    static func register(with tableView: UITableView) {
-        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
-    }
+class SliderTableViewCell: UITableViewCell, NibDefinedTableCell {
     
     static func dequeue(from tableView: UITableView, indexPath: IndexPath, with configuration: SliderCellConfiguration) -> SliderTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SliderTableViewCell
@@ -39,9 +35,6 @@ class SliderTableViewCell: UITableViewCell {
         return cell
     }
     
-    private static let cellIdentifier = "SliderTableViewCell"
-    private static let nib = UINib(nibName: cellIdentifier, bundle: Bundle(for: SliderTableViewCell.self))
-
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var slider: UISlider!
     

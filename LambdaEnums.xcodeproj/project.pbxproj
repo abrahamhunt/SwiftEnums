@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D63F53DC21E39FB60080089B /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63F53DB21E39FB60080089B /* TableSection.swift */; };
+		D63F53DE21E3AA320080089B /* NibDefinedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63F53DD21E3AA320080089B /* NibDefinedTableCell.swift */; };
 		D69FD54421C936FB00A1C1EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69FD54321C936FB00A1C1EF /* AppDelegate.swift */; };
 		D69FD54621C936FB00A1C1EF /* EnumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69FD54521C936FB00A1C1EF /* EnumsTableViewController.swift */; };
 		D69FD54921C936FB00A1C1EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69FD54721C936FB00A1C1EF /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		D63F53DB21E39FB60080089B /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
+		D63F53DD21E3AA320080089B /* NibDefinedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibDefinedTableCell.swift; sourceTree = "<group>"; };
 		D69FD54021C936FB00A1C1EF /* LambdaEnums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LambdaEnums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69FD54321C936FB00A1C1EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D69FD54521C936FB00A1C1EF /* EnumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTableViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				D6B8D42621DFA2330081BE14 /* SliderTableViewCell.xib */,
 				D6B8D42921DFA23F0081BE14 /* TextTableViewCell.swift */,
 				D6B8D42A21DFA23F0081BE14 /* TextTableViewCell.xib */,
+				D63F53DD21E3AA320080089B /* NibDefinedTableCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				D69FD54621C936FB00A1C1EF /* EnumsTableViewController.swift in Sources */,
 				D69FD54421C936FB00A1C1EF /* AppDelegate.swift in Sources */,
 				D6B8D42721DFA2330081BE14 /* SliderTableViewCell.swift in Sources */,
+				D63F53DE21E3AA320080089B /* NibDefinedTableCell.swift in Sources */,
 				D6B8D43021DFACD20081BE14 /* MoodEmoji.swift in Sources */,
 				D6B8D42121DFA21A0081BE14 /* SwitchTableViewCell.swift in Sources */,
 				D6B8D42B21DFA23F0081BE14 /* TextTableViewCell.swift in Sources */,

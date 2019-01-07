@@ -11,17 +11,9 @@ import UIKit
 struct SwitchCellConfiguration {
     let isSwitchOn: Bool
     let title: String
-    
-    func cell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        return SwitchTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: self)
-    }
 }
 
-class SwitchTableViewCell: UITableViewCell {
-    
-    static func register(with tableView: UITableView) {
-        tableView.register(nib, forCellReuseIdentifier: cellIdentifier)
-    }
+class SwitchTableViewCell: UITableViewCell, NibDefinedTableCell {
     
     static func dequeue(from tableView: UITableView, indexPath: IndexPath, with configuration: SwitchCellConfiguration) -> SwitchTableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SwitchTableViewCell
@@ -29,9 +21,6 @@ class SwitchTableViewCell: UITableViewCell {
         return cell
     }
     
-    private static let cellIdentifier = "SwitchTableViewCell"
-    private static let nib = UINib(nibName: cellIdentifier, bundle: Bundle(for: SwitchTableViewCell.self))
-
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var onSwitch: UISwitch!
     
