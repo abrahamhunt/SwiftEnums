@@ -10,10 +10,34 @@ import UIKit
 
 class EnumsTableViewController: UITableViewController {
     
+    enum TableSection {
+        case moods
+        case switches
+        case sliders
+        
+        var title: String {
+            switch self {
+            case .moods: return NSLocalizedString("Moods", comment: "Title for moods section")
+            case .switches: return NSLocalizedString("Sliders", comment: "Title for sliders section")
+            case .sliders: return NSLocalizedString("Switches", comment: "Title for switches section")
+            }
+        }
+    }
+    
+    enum TableCellType {
+        case text(configuration: TextCellConfiguration)
+        case onSwitch(configuration: SwitchCellConfiguration)
+        case slider(configuration: SliderCellConfiguration)
+    }
+    
     var moods: [TextCellConfiguration] = [TextCellConfiguration]()
     var switchRows: [SwitchCellConfiguration] = [SwitchCellConfiguration]()
     var sliderRows: [SliderCellConfiguration] = [SliderCellConfiguration]()
 
+    var sections: [TableSection] = [.moods, .switches, .sliders]
+    
+    var intermingled: [TableCellType] = [TableCellType]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,37 +57,44 @@ class EnumsTableViewController: UITableViewController {
         let steps = SliderCellConfiguration.init(title: NSLocalizedString("Steps", comment: "Title for the steps cell"), thumbColor: .blue)
         sliderRows = [calories, steps]
         
+        intermingled = moods.map({ TableCellType.text(configuration: $0)}) + switchRows.map({ TableCellType.onSwitch(configuration: $0)}) + sliderRows.map({ TableCellType.slider(configuration: $0)})
+        
         tableView.reloadData()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+//        return sections.count
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0: return moods.count
-        case 1: return switchRows.count
-        case 2: return sliderRows.count
-        default: return 0
-        }
+//        let section = sections[section]
+//        switch section {
+//        case .moods: return moods.count
+//        case .switches: return switchRows.count
+//        case .sliders: return sliderRows.count
+//        }
+        return intermingled.count
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0: return NSLocalizedString("Moods", comment: "Title for moods section")
-        case 1: return NSLocalizedString("Sliders", comment: "Title for sliders section")
-        case 2: return NSLocalizedString("Switches", comment: "Title for switches section")
-        default: return nil
-        }
+//        let section = sections[section]
+//        return section.title
+        return nil
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.section {
-        case 0: return SwitchTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: switchRows[indexPath.row])
-        case 1: return SliderTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: sliderRows[indexPath.row])
-        case 2: return TextTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: moods[indexPath.row])
-        default: assert(false, "Shouldn't have cells in another section")
+//        let section = sections[indexPath.section]
+//        switch section {
+//        case .moods: return TextTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: moods[indexPath.row])
+//        case .switches: return SwitchTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: switchRows[indexPath.row])
+//        case .sliders: return SliderTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: sliderRows[indexPath.row])
+//        }
+        let type = intermingled[indexPath.row]
+        switch type {
+        case .text(let configuration): return TextTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: configuration)
+        case .onSwitch(let configuration): return SwitchTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: configuration)
+        case .slider(let configuration): return SliderTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: configuration)
         }
     }
     
