@@ -10,46 +10,6 @@ import UIKit
 
 class EnumsTableViewController: UITableViewController {
     
-    enum TableSection {
-        case switches(collection: [SwitchCellConfiguration])
-        case sliders(collection: [SliderCellConfiguration])
-        case moods(collection: [TextCellConfiguration])
-        
-        var count: Int {
-            switch self {
-            case .switches(let collection):
-                return collection.count
-            case .sliders(let collection):
-                return collection.count
-            case .moods(let collection):
-                return collection.count
-            }
-        }
-        
-        var title: String {
-            switch self {
-            case .switches(_):
-                return NSLocalizedString("Switches", comment: "Title for switches section")
-            case .sliders(_):
-                return NSLocalizedString("Sliders", comment: "Title for sliders section")
-            case .moods(_):
-                return NSLocalizedString("Moods", comment: "Title for moods section")
-            }
-        }
-        
-        func cell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-            switch self {
-            case .switches(let collection):
-                return SwitchTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: collection[indexPath.row])
-            case .sliders(let collection):
-                return SliderTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: collection[indexPath.row])
-            case .moods(let collection):
-                return TextTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: collection[indexPath.row])
-            }
-        }
-        
-    }
-    
     // Unify collections with an enforced order, sounds like an array
     var sections = [TableSection]()
     
@@ -70,7 +30,12 @@ class EnumsTableViewController: UITableViewController {
         let calories = SliderCellConfiguration.init(title: NSLocalizedString("Calories", comment: "Title for the calories cell"), thumbColor: .red)
         let steps = SliderCellConfiguration.init(title: NSLocalizedString("Steps", comment: "Title for the steps cell"), thumbColor: .blue)
         
-        sections = [.switches(collection: [breakfast, lunch, dinner]), .sliders(collection: [calories, steps]), .moods(collection: [sadMood, happyMood])]
+        //sections = [.switches(collection: [breakfast, lunch, dinner]), .sliders(collection: [calories, steps]), .moods(collection: [sadMood, happyMood])]
+//        sections = [.intermingled(collection: [.onSwitch(breakfast), .slider(calories), .mood(happyMood), .slider(steps), .onSwitch(lunch), .mood(sadMood), .onSwitch(dinner)])]
+        
+//        sections = [SwitchTableSection(title: NSLocalizedString("Switches", comment: "Title for switches section"), cellConfigurations: [breakfast, lunch, dinner]), SliderTableSection(title: NSLocalizedString("Sliders", comment: "Title for sliders section"), cellConfigurations: [calories, steps]), TextTableSection(title: NSLocalizedString("Moods", comment: "Title for moods section"), cellConfigurations: [sadMood, happyMood])]
+        
+        sections = [TableSection(title: nil, types: [.onSwitch(breakfast), .slider(calories), .text(happyMood), .slider(steps), .onSwitch(lunch), .text(sadMood), .onSwitch(dinner)])]
         
         tableView.reloadData()
     }

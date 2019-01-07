@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D63F53DC21E39FB60080089B /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63F53DB21E39FB60080089B /* TableSection.swift */; };
 		D69FD54421C936FB00A1C1EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69FD54321C936FB00A1C1EF /* AppDelegate.swift */; };
 		D69FD54621C936FB00A1C1EF /* EnumsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69FD54521C936FB00A1C1EF /* EnumsTableViewController.swift */; };
 		D69FD54921C936FB00A1C1EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D69FD54721C936FB00A1C1EF /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D63F53DB21E39FB60080089B /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
 		D69FD54021C936FB00A1C1EF /* LambdaEnums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LambdaEnums.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D69FD54321C936FB00A1C1EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D69FD54521C936FB00A1C1EF /* EnumsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumsTableViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				D6B8D42F21DFACD20081BE14 /* MoodEmoji.swift */,
+				D63F53DB21E39FB60080089B /* TableSection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D63F53DC21E39FB60080089B /* TableSection.swift in Sources */,
 				D69FD54621C936FB00A1C1EF /* EnumsTableViewController.swift in Sources */,
 				D69FD54421C936FB00A1C1EF /* AppDelegate.swift in Sources */,
 				D6B8D42721DFA2330081BE14 /* SliderTableViewCell.swift in Sources */,

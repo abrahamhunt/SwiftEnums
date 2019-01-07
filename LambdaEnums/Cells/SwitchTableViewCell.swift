@@ -11,6 +11,10 @@ import UIKit
 struct SwitchCellConfiguration {
     let isSwitchOn: Bool
     let title: String
+    
+    func cell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+        return SwitchTableViewCell.dequeue(from: tableView, indexPath: indexPath, with: self)
+    }
 }
 
 class SwitchTableViewCell: UITableViewCell {
