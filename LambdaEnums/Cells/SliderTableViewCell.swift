@@ -14,12 +14,14 @@ struct SliderCellConfiguration {
         case red
         case blue
         case purple
+        case colorWithRGB(red: Int, green: Int, blue: Int)
         
         var color: UIColor {
             switch self {
             case .red: return .red
             case .blue: return .blue
             case .purple: return .purple
+            case .colorWithRGB(let red, let green, let blue): return UIColor(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: 1.0)
             }
         }
     }
