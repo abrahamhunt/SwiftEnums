@@ -7,4 +7,4 @@ Refactoring of the project will be held on other branches
 
 Making an A line
 
-Making a B line
+Changing the B line
