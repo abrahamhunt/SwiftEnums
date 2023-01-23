@@ -5,6 +5,6 @@ Master Branch holds an initial project
 
 Refactoring of the project will be held on other branches
 
-Making an A line
+Changing the A line
 
 Making a B line
